@@ -1,0 +1,61 @@
+@import '~boxicons/css/boxicons.css';
+
+.back-image {
+    background-image: url('../images/bg-fabres-orbis.jpg');
+}
+
+.home-banner {
+    height: 313px;
+    z-index: 0;
+}
+
+.service-banner-img {
+    height: 230px;
+}
+
+@media (min-width: 1024px) {
+    .home-banner {
+        height: 690px;
+    }
+    .service-banner, .service-banner-img {
+        height: 620px;
+    }
+    .offset-lg-7 {
+        margin-left: 58.3333%;
+    }
+    .offset-lg-7-r {
+        margin-right: 58.3333%;
+    }
+}
+
+.zindex-1999 {
+    z-index: 1999;
+}
+
+.small-banner {
+    height: 500px;
+}
+
+.small-banner-img {
+    background-image: url('../images/bg-fabres-orbis.jpg');
+}
+
+.top50 {
+    top: 50%;
+}
+
+blockquote::before {
+    font-family: Georgia, serif;
+    content: "\201C";
+    font-size: 14rem;
+    position: absolute;
+    left: 17rem;
+}
+
+.contact {
+    z-index: 1992;
+}
+
+.negative-z-1 {
+    z-index: -1;
+}

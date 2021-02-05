@@ -1,0 +1,35 @@
+<template>
+    <section>
+        <GmapMap
+            :center="center"
+            :zoom="7"
+            style="height: 300px"
+        >
+            <GmapMarker
+                v-for="(item, index) in markers"
+                :key="index"
+                :position="item.position"
+                :clickable="true"
+            />
+        </GmapMap>
+    </section>
+</template>
+
+<script>
+
+export default {
+  data() {
+    return {
+        center: { lat: -3.350235, lng: 111.995865 },
+        markers: [
+            { 
+                position: { lat: -0.48585, lng: 117.1466 }
+            },
+            {
+                position: { lat: -6.9127778, lng: 107.6205556 }
+            }
+        ]
+    };
+  }
+};
+</script>

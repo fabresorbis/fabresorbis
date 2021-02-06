@@ -1,53 +1,146 @@
 <template>
-    <section class="">
-        <div class="service-banner pb-5 lg:relative lg:pb-0 overflow-hidden">
-            <div class="service-banner-img bg-cover bg-no-repeat bg-center lg:w-1/2 lg:absolute" style="background-image:url('https://picsum.photos/1410/1240?random=1')">
-            </div>
-            <div class="container align-middle p-8 lg:p-0 flex flex-col justify-center relative lg:max-w-screen-lg lg:mx-auto lg:h-full">
-                <div class="offset-lg-7 lg:w-5/12">
-                    <h1 class="text-2xl lg:text-4xl font-medium">OGnel eCommerce Website</h1>
-                    <p class="opacity-100 transform translate-x-0 translate-y-0 mt-2 mb-4">
-                        The future by integrating engineering, technology
-                        and social engagement for better future and
-                        economic balance to the nation
-                    </p>
-                    <button class="px-8 py-2 text-lg bg-yellow-500 m-0 text-blue-900 font-bold hover:bg-blue-800 hover:text-yellow-500">Know More</button>
+    <section class="mb-40">
+        <div
+            class="flex w-full justify-center min-h-120 my-16 lg:relative lg:pb-0 overflow-hidden"
+        >
+            <div class="flex flex-col lg:flex-row-reverse w-4/5">
+                <div class="w-full lg:w-1/2 my-auto">
+                    <img
+                        src="../assets/images/home-fabres-orbis-led-01.svg"
+                        class="max-h-100"
+                        alt=""
+                    />
+                </div>
+                <div class="w-full lg:w-1/2 m-auto pt-10">
+                    <div class="lg:pr-20">
+                        <h1
+                            class="text-3xl lg:text-4xl font-extrabold text-blue-900"
+                        >
+                            FO Lights LEDs
+                        </h1>
+                        <h3 class="text-xl font-semibold text-yellow-400 mb-1">
+                            Light up the Future
+                        </h3>
+                        <p
+                            class="opacity-100 transform translate-x-0 translate-y-0 mt-2 mb-4"
+                        >
+                            FO Lights LEDs fully focused on LED products and its
+                            services.
+                        </p>
+                        <a
+                            href="/products-services"
+                            class="px-4 py-2 bg-yellow-400 text-blue-900 font-bold text-lg"
+                            >Know More</a
+                        >
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="service-banner pb-5 lg:relative lg:pb-0 overflow-hidden lg:flex lg:flex-row-reverse">
-            <div class="service-banner-img bg-cover bg-no-repeat bg-center lg:w-1/2 lg:absolute" style="background-image:url('https://picsum.photos/1410/1240?random=2')">
-            </div>
-            <div class="container align-middle p-8 lg:p-0 flex flex-col justify-center relative lg:max-w-screen-lg lg:mx-auto lg:h-full">
-                <div class="offset-lg-7-r lg:w-5/12">
-                    <h1 class="text-2xl lg:text-4xl font-medium">OGnel eCommerce Website</h1>
-                    <p class="opacity-100 transform translate-x-0 translate-y-0 mt-2 mb-4">
-                        The future by integrating engineering, technology
-                        and social engagement for better future and
-                        economic balance to the nation
-                    </p>
-                    <button class="px-8 py-2 text-lg bg-yellow-500 m-0 text-blue-900 font-bold hover:bg-blue-800 hover:text-yellow-500">Know More</button>
+        <div
+            class="flex w-full justify-center min-h-120 my-16 lg:relative lg:pb-0 overflow-hidden"
+        >
+            <div class="flex flex-col lg:flex-row w-4/5">
+                <div class="w-full lg:w-1/2 my-auto">
+                    <img
+                        src="../assets/images/home-fabres-orbis-builds-01.svg"
+                        class="max-h-100"
+                        alt=""
+                    />
+                </div>
+                <div class="w-full lg:w-1/2 m-auto pt-10">
+                    <div class="lg:pl-20">
+                        <h1
+                            class="text-3xl lg:text-4xl font-extrabold text-blue-900"
+                        >
+                            FO Builds
+                        </h1>
+                        <h3 class="text-xl font-semibold text-yellow-400 mb-1">
+                            Dream, Design, Build.
+                        </h3>
+                        <p
+                            class="opacity-100 transform translate-x-0 translate-y-0 mt-2 mb-4"
+                        >
+                            FO Builds is the division, dealing with the building
+                            designs, constructions, surveying, etc.
+                        </p>
+                        <a
+                            href="/products-services"
+                            class="px-4 py-2 bg-yellow-400 text-blue-900 font-bold text-lg"
+                            >Know More</a
+                        >
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="service-banner pb-5 lg:relative lg:pb-0 overflow-hidden">
-            <div class="service-banner-img bg-cover bg-no-repeat bg-center lg:w-1/2 lg:absolute" style="background-image:url('https://picsum.photos/1410/1240?random=3')">
+        <div
+            class="flex w-full justify-center min-h-120 my-16 lg:relative lg:pb-0 overflow-hidden"
+        >
+            <div class="flex flex-col lg:flex-row-reverse w-4/5">
+                <div class="w-full lg:w-1/2 my-auto">
+                    <img
+                        src="../assets/images/home-fabres-orbis-software-01.svg"
+                        class="max-h-100"
+                        alt=""
+                    />
+                </div>
+                <div class="w-full lg:w-1/2 m-auto pt-10">
+                    <div class="lg:pr-20">
+                        <h1
+                            class="text-3xl lg:text-4xl font-extrabold text-blue-900"
+                        >
+                            FO Soft Solutions
+                        </h1>
+                        <h3 class="text-xl font-semibold text-yellow-400 mb-1">
+                            Meet the Future
+                        </h3>
+                        <p
+                            class="opacity-100 transform translate-x-0 translate-y-0 mt-2 mb-4"
+                        >
+                            We wish to work on the latest software technologies
+                            such as machine learning, artificial intelligence,
+                            robotics, etc.
+                        </p>
+                        <a
+                            href="/products-services"
+                            class="px-4 py-2 bg-yellow-400 text-blue-900 font-bold text-lg"
+                            >Know More</a
+                        >
+                    </div>
+                </div>
             </div>
-            <div class="container align-middle p-8 lg:p-0 flex flex-col justify-center relative lg:max-w-screen-lg lg:mx-auto lg:h-full">
-                <div class="offset-lg-7 lg:w-5/12">
-                    <h1 class="text-2xl lg:text-4xl font-medium">OGnel eCommerce Website</h1>
-                    <p class="opacity-100 transform translate-x-0 translate-y-0 mt-2 mb-4">
-                        The future by integrating engineering, technology
-                        and social engagement for better future and
-                        economic balance to the nation
-                    </p>
-                    <div class="flex">
-                        <a href="">
-                            <img src="../assets/images/google-play-badge.png" class="h-12 pr-4" alt="">
-                        </a>
-                        <a href="">
-                            <img src="../assets/images/apple-app-store-badge.png" class="h-12" alt="">
-                        </a>
+        </div>
+        <div
+            class="flex w-full justify-center min-h-120 my-16 lg:relative lg:pb-0 overflow-hidden"
+        >
+            <div class="flex flex-col lg:flex-row w-4/5">
+                <div class="w-full lg:w-1/2 my-auto">
+                    <img
+                        src="../assets/images/home-fabres-orbis-fly-01.svg"
+                        class="max-h-100"
+                        alt=""
+                    />
+                </div>
+                <div class="w-full lg:w-1/2 m-auto pt-10">
+                    <div class="lg:pl-20">
+                        <h1
+                            class="text-3xl lg:text-4xl font-extrabold text-blue-900"
+                        >
+                            FlyFP
+                        </h1>
+                        <h3 class="text-xl font-semibold text-yellow-400 mb-1">
+                            Touch the Sky
+                        </h3>
+                        <p
+                            class="opacity-100 transform translate-x-0 translate-y-0 mt-2 mb-4"
+                        >
+                            It's the time to fly with wings out, and the latest
+                            technologies around us are fuelling it.
+                        </p>
+                        <a
+                            href="/products-services"
+                            class="px-4 py-2 bg-yellow-400 text-blue-900 font-bold text-lg"
+                            >Know More</a
+                        >
                     </div>
                 </div>
             </div>
@@ -56,7 +149,5 @@
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>

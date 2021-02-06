@@ -1,7 +1,7 @@
-@import '~boxicons/css/boxicons.css';
+@import "~boxicons/css/boxicons.css";
 
 .back-image {
-    background-image: url('../images/bg-fabres-orbis.jpg');
+    background-image: url("../images/bg-fabres-orbis.jpg");
 }
 
 .home-banner {
@@ -17,7 +17,8 @@
     .home-banner {
         height: 690px;
     }
-    .service-banner, .service-banner-img {
+    .service-banner,
+    .service-banner-img {
         height: 620px;
     }
     .offset-lg-7 {
@@ -33,15 +34,11 @@
 }
 
 .small-banner {
-    height: 500px;
+    height: 300px;
 }
 
 .small-banner-img {
-    background-image: url('../images/bg-fabres-orbis.jpg');
-}
-
-.top50 {
-    top: 50%;
+    background-image: url("../images/bg-fabres-orbis.jpg");
 }
 
 blockquote::before {

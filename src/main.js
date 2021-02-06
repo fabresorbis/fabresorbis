@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import "./assets/styles/app.css"
+import "./assets/compiled.css"
 import "./assets/styles/styles.css"
+import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 import Vuelidate from 'vuelidate'
 import VueMeta from 'vue-meta';
 

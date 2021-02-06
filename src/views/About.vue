@@ -2,7 +2,8 @@
     <div class="products_services">
         <NavigationMenu />
         <SmallBanner>
-            Fabres Orbis <br> A Home of Solutions
+            Fabres Orbis <br />
+            A Home of Solutions
         </SmallBanner>
         <AboutCompany />
         <OurAim />
@@ -14,17 +15,16 @@
 </template>
 
 <script>
-
 import NavigationMenu from "../components/NavigationMenu";
 import SmallBanner from "../components/SmallBanner";
 import AboutCompany from "../components/AboutCompany";
-import OurAim from '../components/OurAim';
-import AboutFabres from '../components/AboutFabres';
-import Inspiration from '../components/Inspiration';
+import OurAim from "../components/OurAim";
+import AboutFabres from "../components/AboutFabres";
+import Inspiration from "../components/Inspiration";
 import Footer from "../components/Footer";
 
 export default {
-    name: 'About',
+    name: "About",
     components: {
         NavigationMenu,
         SmallBanner,
@@ -32,15 +32,15 @@ export default {
         OurAim,
         AboutFabres,
         Inspiration,
-        Footer,
+        Footer
     },
     metaInfo: {
-        title: 'About Us',
-        titleTemplate: '%s - Fabres Orbis',
+        title: "About Us",
+        titleTemplate: "%s - Fabres Orbis",
         htmlAttrs: {
-            lang: 'en',
+            lang: "en",
             amp: true
         }
     }
-}
+};
 </script>

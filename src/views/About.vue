@@ -2,8 +2,18 @@
     <div class="products_services">
         <NavigationMenu />
         <SmallBanner>
-            Fabres Orbis <br />
-            A Home of Solutions
+            <img
+                src="../assets/images/fabresorbis.png"
+                class="w-full"
+                style="max-width:300px;"
+                alt=""
+            />
+            <h1
+                class="pt-8 text-3xl md:text-3xl lg:text-5xl font-bold leading-tight my-auto"
+            >
+                FO Groups <br />
+                The Living Future
+            </h1>
         </SmallBanner>
         <AboutCompany />
         <OurAim />

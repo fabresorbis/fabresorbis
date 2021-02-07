@@ -2,8 +2,17 @@
     <div class="products_services">
         <NavigationMenu />
         <SmallBanner>
-            FO Groups <br />
-            Products & Services
+            <img
+                src="../assets/images/fabresorbis.png"
+                class="w-full"
+                style="max-width:300px;"
+                alt=""
+            />
+            <h1
+                class="pt-8 text-3xl md:text-3xl lg:text-5xl font-bold leading-tight my-auto"
+            >
+                How can we serve you?
+            </h1>
         </SmallBanner>
         <Features />
         <Products />

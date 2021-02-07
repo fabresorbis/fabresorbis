@@ -16,8 +16,8 @@
                         <p
                             class="text-xl lg:text-3xl text-center leading-snug pb-4 font-medium"
                         >
-                            Dream is not that which you see while in sleeping,
-                            it's something that does not let you sleep.
+                            "Dream is not that which you see while in sleeping,
+                            it's something that does not let you sleep."
                         </p>
                         <p class="md:text-right leading-none text-lg font-bold">
                             Dr. A.P.J. Abdul Kalam <br /><span
@@ -41,8 +41,8 @@
                         <p
                             class="text-xl lg:text-3xl text-center leading-snug pb-4 font-medium"
                         >
-                            Deal with crisis such a way that you can hold your
-                            head high and sleep well at night.
+                            "Deal with crisis such a way that you can hold your
+                            head high and sleep well at night."
                         </p>
                         <p class="md:text-right leading-none text-lg font-bold">
                             Ratan N. Tata <br /><span

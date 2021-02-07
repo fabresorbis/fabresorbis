@@ -27,11 +27,11 @@
                             FO Lights LEDs fully focused on LED products and its
                             services.
                         </p>
-                        <a
-                            href="/products-services"
+                        <router-link
+                            to="/products-services"
                             class="px-4 py-2 bg-yellow-400 text-blue-900 font-bold text-lg"
-                            >Know More</a
-                        >
+                            >Know More
+                        </router-link>
                     </div>
                 </div>
             </div>
@@ -63,11 +63,11 @@
                             FO Builds is the division, dealing with the building
                             designs, constructions, surveying, etc.
                         </p>
-                        <a
-                            href="/products-services"
+                        <router-link
+                            to="/products-services"
                             class="px-4 py-2 bg-yellow-400 text-blue-900 font-bold text-lg"
-                            >Know More</a
-                        >
+                            >Know More
+                        </router-link>
                     </div>
                 </div>
             </div>
@@ -100,11 +100,11 @@
                             such as machine learning, artificial intelligence,
                             robotics, etc.
                         </p>
-                        <a
-                            href="/products-services"
+                        <router-link
+                            to="/products-services"
                             class="px-4 py-2 bg-yellow-400 text-blue-900 font-bold text-lg"
-                            >Know More</a
-                        >
+                            >Know More
+                        </router-link>
                     </div>
                 </div>
             </div>
@@ -125,7 +125,7 @@
                         <h1
                             class="text-3xl lg:text-4xl font-extrabold text-blue-900"
                         >
-                            FlyFP
+                            FlyFO
                         </h1>
                         <h3 class="text-xl font-semibold text-yellow-400 mb-1">
                             Touch the Sky
@@ -136,11 +136,11 @@
                             It's the time to fly with wings out, and the latest
                             technologies around us are fuelling it.
                         </p>
-                        <a
-                            href="/products-services"
+                        <router-link
+                            to="/products-services"
                             class="px-4 py-2 bg-yellow-400 text-blue-900 font-bold text-lg"
-                            >Know More</a
-                        >
+                            >Know More
+                        </router-link>
                     </div>
                 </div>
             </div>

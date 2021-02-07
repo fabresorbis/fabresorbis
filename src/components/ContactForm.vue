@@ -244,7 +244,7 @@ export default {
             if (!this.$v.$invalid) {
                 emailjs
                     .sendForm(
-                        "service_hfxlfva",
+                        "service_1rh1mhb",
                         "template_vmr8fdq",
                         e.target,
                         "user_IUTi4iPGLp7nRi0SOj2Pn"
@@ -256,6 +256,7 @@ export default {
                         this.phone_number = "";
                         this.company = "";
                         this.message = "";
+                        this.submitLogin = false;
                     });
             }
         }

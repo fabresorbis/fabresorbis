@@ -9,10 +9,15 @@
                 <div class="flex flex-wrap" style="z-index:1">
                     <div class="hidden lg:block lg:w-1/2 relative">
                         <h1
-                            class="opacity-100 transform translate-x-0 translate-y-0 text-4xl lg:text-6xl font-bold leading-tight m-0"
+                            class="opacity-100 transform translate-x-0 translate-y-0 text-4xl lg:text-6xl font-bold leading-none m-0"
+                        >
+                            Welcome to <br />FO Groups
+                        </h1>
+                        <h4
+                            class="opacity-100 transform translate-x-0 translate-y-0 text-xl lg:text-xl font-bold leading-tight m-0 mt-2"
                         >
                             The Living future
-                        </h1>
+                        </h4>
                         <p
                             class="opacity-100 transform translate-x-0 translate-y-0 mt-2 mb-4"
                         >
@@ -20,11 +25,11 @@
                             and social engagement for better future and<br />
                             economic balance to the nation
                         </p>
-                        <button
-                            class="px-8 py-2 text-lg bg-yellow-400 m-0 text-blue-900 font-bold hover:bg-blue-900 hover:text-yellow-400"
-                        >
-                            Know More
-                        </button>
+                        <router-link
+                            to="/about-us"
+                            class="px-4 py-2 bg-yellow-400 text-blue-900 font-bold text-lg"
+                            >Know More
+                        </router-link>
                     </div>
                     <div class="w-full lg:w-1/2 relative justify-items-center">
                         <img

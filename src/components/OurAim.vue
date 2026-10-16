@@ -6,7 +6,7 @@
             >
                 <div class="mb-8 lg:mb-0 lg:w-1/2 lg:ml-20">
                     <img
-                        src="../assets/images/fabresorbis.png"
+                        src="../assets/images/FO RND BLU BG.png"
                         alt="FO Groups"
                     />
                 </div>

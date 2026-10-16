@@ -173,6 +173,7 @@
 <script>
 import NavigationMenu from "../components/NavigationMenu";
 import Footer from "../components/Footer";
+import createSeo from "../seo";
 
 export default {
     name: "ProductsServices",
@@ -182,21 +183,7 @@ export default {
         Footer
     },
 
-    metaInfo: {
-        title: "Products & Services",
-        titleTemplate: "%s | FO GROUPS",
-        meta: [
-            {
-                vmid: "description",
-                name: "description",
-                content:
-                    "Explore FO GROUPS services in civil works, engineering design, MEP, HVAC, ELV, project management, turnkey projects, maintenance, and labour support."
-            }
-        ],
-        htmlAttrs: {
-            lang: "en"
-        }
-    },
+       metaInfo: createSeo("services"),
 
     data() {
         return {

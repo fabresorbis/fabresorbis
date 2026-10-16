@@ -125,41 +125,53 @@ export default {
 
 <style scoped>
 .fo-navigation {
+    --navigation-blue: #17324d;
     position: relative;
     z-index: 2000;
     width: 100%;
-    background: #17324d;
+    background: var(--navigation-blue);
+    overflow: visible;
 }
 
 .navigation-container {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 24px;
+    width: 100%;
     max-width: 1280px;
-    min-height: 88px;
+    height: 88px;
     margin: 0 auto;
-    padding: 10px 28px;
+    padding: 0 28px;
     box-sizing: border-box;
 }
 
+/* The circle extends 52px below the navigation bar. */
 .brand-link {
-    display: inline-flex;
+    position: absolute;
+    top: -10px;
+    left: 28px;
+    z-index: 2;
+    display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
-    padding: 0;
+    width: 150px;
+    height: 150px;
+    padding: 14px;
+    box-sizing: border-box;
     border: none;
-    border-radius: 0;
-    background: transparent;
+    border-radius: 50%;
+    background: var(--navigation-blue);
     box-shadow: none;
     text-decoration: none;
+    overflow: hidden;
 }
 
 .navigation-logo {
     display: block;
-    width: 112px;
-    height: 56px;
+    width: 122px;
+    height: 100px;
     object-fit: contain;
     background: transparent;
     border: none;
@@ -170,9 +182,12 @@ export default {
 .desktop-links {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     gap: 8px;
+    width: 100%;
     margin: 0;
-    padding: 0;
+    padding: 0 0 0 174px;
+    box-sizing: border-box;
     list-style: none;
 }
 
@@ -184,6 +199,7 @@ export default {
     font-size: 15px;
     font-weight: 700;
     line-height: 1.4;
+    white-space: nowrap;
     text-decoration: none;
     transition: background-color 0.2s, color 0.2s;
 }
@@ -191,7 +207,7 @@ export default {
 .navigation-link:hover,
 .navigation-link.router-link-exact-active {
     background: #f6c900;
-    color: #17324d;
+    color: var(--navigation-blue);
 }
 
 .brand-link:focus-visible,
@@ -208,6 +224,7 @@ export default {
     justify-content: center;
     width: 44px;
     height: 44px;
+    margin-left: auto;
     padding: 8px;
     border: 1px solid #6b8093;
     border-radius: 6px;
@@ -225,15 +242,24 @@ export default {
     display: none;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 900px) {
     .navigation-container {
-        min-height: 78px;
-        padding: 9px 20px;
+        height: 78px;
+        padding: 0 20px;
+    }
+
+    /* The mobile circle extends 34px below the bar. */
+    .brand-link {
+        top: 0;
+        left: 20px;
+        width: 112px;
+        height: 112px;
+        padding: 10px;
     }
 
     .navigation-logo {
-        width: 98px;
-        height: 48px;
+        width: 92px;
+        height: 76px;
     }
 
     .desktop-links {
@@ -250,8 +276,8 @@ export default {
         top: 100%;
         left: 0;
         right: 0;
-        padding: 12px 20px 20px;
-        background: #17324d;
+        padding: 46px 20px 20px;
+        background: var(--navigation-blue);
         box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
     }
 
@@ -275,7 +301,7 @@ export default {
     .mobile-link:hover,
     .mobile-link.router-link-exact-active {
         background: #f6c900;
-        color: #17324d;
+        color: var(--navigation-blue);
     }
 }
 

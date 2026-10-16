@@ -16,11 +16,11 @@
                 </p>
 
                 <p class="text-xl leading-relaxed mb-6">
-                    Our expertise spans civil and architectural works,
-                    engineering design, MEP, HVAC, and ELV systems. We also
-                    provide project management and consultation, turnkey
-                    project delivery, operations and maintenance, and workforce
-                    support—bringing coordinated expertise to each stage of
+                    Our expertise spans Civil and Architectural works,
+                    Engineering design, MEP, HVAC, FAPA, Fire System and ELV systems. We also
+                    provide Project Management and Consultation (PMC), Turnkey
+                    Project Delivery, Operations and Maintenance, and Workforce
+                    Support—bringing coordinated expertise to each stage of
                     a project.
                 </p>
 
@@ -34,9 +34,7 @@
                 </p>
 
                 <p class="text-xl leading-relaxed">
-                    Guided by our promise,
-                    <strong>“The Living Future,”</strong>
-                    we aim to grow through innovation, responsible practices,
+                    We aim to grow through innovation, responsible practices,
                     and lasting partnerships—contributing to the progress of
                     our clients, our communities, and the nation.
                 </p>

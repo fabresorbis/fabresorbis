@@ -58,17 +58,33 @@ export default {
 
 .about-banner {
     width: 100%;
+    height: 380px;
     margin: 0;
     padding: 0;
+    overflow: hidden;
     background: #022c4b;
 }
 
 .about-banner-image {
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 55%;
     margin: 0;
     padding: 0;
     border: none;
+}
+
+@media (max-width: 900px) {
+    .about-banner {
+        height: 300px;
+    }
+}
+
+@media (max-width: 540px) {
+    .about-banner {
+        height: 220px;
+    }
 }
 </style>

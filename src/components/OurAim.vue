@@ -5,22 +5,31 @@
                 class="flex flex-col lg:flex-row-reverse w-5/6 justify-center mx-auto items-center"
             >
                 <div class="mb-8 lg:mb-0 lg:w-1/2 lg:ml-20">
-                    <img src="../assets/images/fo.jpg" alt="" />
+                    <img
+                        src="../assets/images/fo.jpg"
+                        alt="FO Groups"
+                    />
                 </div>
+
                 <div class="lg:w-1/2">
-                    <h1 class="text-5xl font-medium mb-1">Our Aim</h1>
-                    <p class="text-xl leading-relaxed">
-                        Our ultimate aim is to establish the company in all over
-                        the field of engineering to carry out good products and
-                        services that to be helpful for the society.
+                    <h2 class="text-5xl font-medium mb-6">Our Aim</h2>
+
+                    <p class="text-xl leading-relaxed mb-6">
+                        Our aim is to bring engineering, design and technology
+                        together to deliver dependable solutions that improve
+                        everyday life. From individual services to complete
+                        projects, we work to meet our clients’ needs through
+                        thoughtful planning, quality workmanship, and
+                        responsible execution.
                     </p>
-                    <br />
+
                     <p class="text-xl leading-relaxed">
-                        That makes us to gift the best products and services to
-                        the world in various fields of engineering using the
-                        advanced technologies over time and thereby raise the
-                        economic and social standards of our society and the
-                        nation.
+                        We aspire to grow across engineering disciplines,
+                        adopt useful new technologies, and create opportunities
+                        for skilled professionals. Through lasting partnerships
+                        and sustainable practices, we seek to contribute to
+                        the social and economic progress of our communities
+                        and the nation.
                     </p>
                 </div>
             </div>

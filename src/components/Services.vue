@@ -27,12 +27,12 @@
 
             <div class="why-choose-strengths">
                 <div
-                    v-for="(strength, index) in strengths"
-                    :key="strength.title"
+                    v-for="strength in strengths"
+                    :key="strength.number"
                     class="strength-item"
                 >
                     <span class="strength-number" aria-hidden="true">
-                        {{ index + 1 < 10 ? "0" + (index + 1) : index + 1 }}
+                        {{ strength.number }}
                     </span>
 
                     <div class="strength-content">
@@ -47,25 +47,31 @@
 
 <script>
 export default {
+    name: "Services",
+
     data() {
         return {
             strengths: [
                 {
+                    number: "01",
                     title: "Multidisciplinary Expertise",
                     description:
                         "Engineering, design, and project capabilities brought together for coordinated solutions."
                 },
                 {
+                    number: "02",
                     title: "Built Around Your Needs",
                     description:
                         "A practical approach shaped by your priorities, site requirements, budget, and long-term goals."
                 },
                 {
+                    number: "03",
                     title: "Quality & Responsibility",
                     description:
                         "Attention to workmanship, reliable execution, and responsible use of materials and resources."
                 },
                 {
+                    number: "04",
                     title: "Partnership & Transparency",
                     description:
                         "Clear communication, accountability, and a commitment to building lasting client relationships."

@@ -75,7 +75,7 @@
                         alt=""
                     />
                     <p class="text-sm">
-                        All rights reserved. Fabres Orbis &copy; 2020
+                        All rights reserved. Fabres Orbis &copy; {{ new Date().getFullYear() }}
                     </p>
                 </div>
             </div>

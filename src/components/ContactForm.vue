@@ -1,193 +1,146 @@
 <template>
-    <section class="contact -mt-48 pb-16">
-        <div class="container mx-auto">
-            <div class="lg:flex w-full md:w-4/5 md:mx-auto">
-                <div
-                    class="flex flex-col w-full lg:w-1/2 p-8 bg-blue-900 text-white"
-                >
-                    <div>
-                        <h1
-                            class="text-xl md:text-2xl lg:text-4xl mb-8 font-bold leading-snug"
-                        >
-                            For Contact
-                        </h1>
+    <section class="fo-contact">
+        <div class="contact-container">
+            <div class="contact-card">
+                <div class="contact-details">
+                    <p class="section-label">CONTACT FO GROUPS</p>
+                    <h1>Let’s discuss your project.</h1>
+                    <p class="contact-intro">
+                        Tell us about your requirements. Our team will
+                        get in touch to discuss how we can help.
+                    </p>
+
+                    <div class="contact-item">
+                        <h2>Visit us</h2>
+                        <p>
+                            Fabres Orbis Private Limited<br />
+                            3rd Floor, J.C. Chambers<br />
+                            No. 60/44, Panampilly Nagar<br />
+                            Kochi, Kerala – 682036
+                        </p>
                     </div>
-                    <div class="flex flex-row mb-12">
-                        <div class="mr-4 pt-1">
-                            <i class="bx bx-map text-2xl"></i>
-                        </div>
-                        <div class="text-lg font-light leading-snug">
-                            <p>Fabres Orbis Pvt. Ltd</p>
-                            <p>3rd Floor, J.C.Chambers</p>
-                            <p>NO 60/44, Panampilly Nagar</p>
-                            <p>Kochi, Keralam - 682036</p>
-                        </div>
+
+                    <div class="contact-item">
+                        <h2>Call us</h2>
+                        <a href="tel:+917012575518">+91 7012575518</a>
+                        <a href="tel:+919074294969">+91 9074294969</a>
                     </div>
-                    <div class="flex flex-row mb-12">
-                        <div class="mr-4 pt-1">
-                            <i class="bx bx-phone text-2xl"></i>
-                        </div>
-                        <div class="text-lg font-light leading-snug">
-                            <p>+91 7012575518, 9074294969</p>
-                        </div>
-                    </div>
-                    <div class="flex flex-row">
-                        <div class="mr-4 pt-1">
-                            <i class="bx bx-mail-send text-2xl"></i>
-                        </div>
-                        <div class="text-lg font-light leading-snug">
-                            <p>info@fogroups.com, fabresorbispvtltd@gmail.com</p>
-                        </div>
+
+                    <div class="contact-item">
+                        <h2>Email us</h2>
+                        <a href="mailto:info@fogroups.com">
+                            info@fogroups.com
+                        </a>
+                        <a href="mailto:fabresorbispvtltd@gmail.com">
+                            fabresorbispvtltd@gmail.com
+                        </a>
                     </div>
                 </div>
-                <div
-                    class="d w-full lg:w-1/2 py-8 px-10 bg-white text-blue-900"
-                >
-                    <div>
-                        <h1
-                            class="text-xl md:text-2xl lg:text-4xl mb-4 font-bold leading-snug"
-                        >
-                            Send us a Message
-                        </h1>
-                        <div
-                            v-if="suc_msg == 'OK'"
-                            class="px-4 py-2 bg-green-700 text-white font-semibold text-base mb-4"
-                        >
-                            Your Enquiry Submitted! Thank you!
-                        </div>
+
+                <div class="contact-form-panel">
+                    <h2>Send us a message</h2>
+                    <p class="form-intro">
+                        Fields marked with * are required.
+                    </p>
+
+                    <div
+                        v-if="successMessage"
+                        class="form-notice notice-success"
+                        role="status"
+                    >
+                        {{ successMessage }}
                     </div>
-                    <form @submit.prevent="submitForm">
-                        <div
-                            class="flex flex-col md:flex-row justify-between md:mb-4"
-                        >
-                            <div class="md:w-1/2 pb-4 md:pb-0 md:pr-4">
-                                <label
-                                    for="name"
-                                    class="block text-gray-500 mb-2"
-                                    >Name</label
-                                >
+
+                    <div
+                        v-if="errorMessage"
+                        class="form-notice notice-error"
+                        role="alert"
+                    >
+                        {{ errorMessage }}
+                    </div>
+
+                    <form
+                        ref="contactForm"
+                        :aria-busy="isSending ? 'true' : 'false'"
+                        @submit.prevent="submitForm"
+                    >
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="contact-name">Name *</label>
                                 <input
-                                    type="text"
+                                    id="contact-name"
+                                    v-model="form.name"
                                     name="name"
-                                    class="w-full h-10 border-b-2 border-yellow-400 bg-gray-100 py-2 px-3"
-                                    v-model="name"
-                                    :class="{
-                                        textBoxErr:
-                                            submitLogin && $v.name.$invalid
-                                    }"
+                                    type="text"
+                                    autocomplete="name"
+                                    maxlength="100"
+                                    required
                                 />
-                                <div
-                                    class="text-red-400"
-                                    v-if="submitLogin && $v.name.$invalid"
-                                >
-                                    This field is required.
-                                </div>
                             </div>
-                            <div class="md:w-1/2 pb-4 md:pb-0 md:pl-4">
-                                <label
-                                    for="email"
-                                    class="block text-gray-500 mb-2"
-                                    >Email</label
-                                >
+
+                            <div class="form-field">
+                                <label for="contact-email">Email *</label>
                                 <input
-                                    type="email"
+                                    id="contact-email"
+                                    v-model="form.email"
                                     name="email"
-                                    class="w-full h-10 border-b-2 border-yellow-400 bg-gray-100 py-2 px-3"
-                                    v-model="email"
-                                    :class="{
-                                        textBoxErr:
-                                            submitLogin && $v.email.$invalid
-                                    }"
+                                    type="email"
+                                    autocomplete="email"
+                                    maxlength="254"
+                                    required
                                 />
-                                <div
-                                    class="text-red-400"
-                                    v-if="submitLogin && $v.email.$invalid"
-                                >
-                                    This field is required.
-                                </div>
                             </div>
                         </div>
-                        <div
-                            class="flex flex-col md:flex-row justify-between md:mb-4"
-                        >
-                            <div class="md:w-1/2 pb-4 md:pb-0 md:pr-4">
-                                <label
-                                    for="phone_number"
-                                    class="block text-gray-500 mb-2"
-                                    >Phone Number</label
-                                >
+
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="contact-phone">
+                                    Phone number *
+                                </label>
                                 <input
-                                    type="text"
+                                    id="contact-phone"
+                                    v-model="form.phone_number"
                                     name="phone_number"
-                                    class="w-full h-10 border-b-2 border-yellow-400 bg-gray-100 py-2 px-3"
-                                    v-model="phone_number"
-                                    :class="{
-                                        textBoxErr:
-                                            submitLogin &&
-                                            $v.phone_number.$invalid
-                                    }"
+                                    type="tel"
+                                    autocomplete="tel"
+                                    maxlength="30"
+                                    required
                                 />
-                                <div
-                                    class="text-red-400"
-                                    v-if="
-                                        submitLogin && $v.phone_number.$invalid
-                                    "
-                                >
-                                    This field is required.
-                                </div>
                             </div>
-                            <div class="md:w-1/2 pb-4 md:pb-0 md:pl-4">
-                                <label
-                                    for="company"
-                                    class="block text-gray-500 mb-2"
-                                    >Company</label
-                                >
+
+                            <div class="form-field">
+                                <label for="contact-company">Company</label>
                                 <input
-                                    type="text"
+                                    id="contact-company"
+                                    v-model="form.company"
                                     name="company"
-                                    class="w-full h-10 border-b-2 border-yellow-400 bg-gray-100 py-2 px-3"
+                                    type="text"
+                                    autocomplete="organization"
+                                    maxlength="150"
                                 />
                             </div>
                         </div>
-                        <div>
-                            <div class="w-full">
-                                <label
-                                    for="message"
-                                    class="block text-gray-500 mb-2"
-                                    >Message</label
-                                >
-                                <textarea
-                                    name="message"
-                                    id=""
-                                    cols="30"
-                                    class="w-full border-b-2 border-yellow-400 bg-gray-100 py-2 px-3"
-                                    rows="10"
-                                    v-model="message"
-                                    :class="{
-                                        textBoxErr:
-                                            submitLogin && $v.message.$invalid
-                                    }"
-                                >
-                                </textarea>
-                                <div
-                                    class="text-red-400"
-                                    v-if="submitLogin && $v.message.$invalid"
-                                >
-                                    This field is required.
-                                </div>
-                            </div>
+
+                        <div class="form-field">
+                            <label for="contact-message">Message *</label>
+                            <textarea
+                                id="contact-message"
+                                v-model="form.message"
+                                name="message"
+                                rows="6"
+                                maxlength="5000"
+                                placeholder="Tell us about your project or enquiry."
+                                required
+                            ></textarea>
                         </div>
-                        <div class="mt-4">
-                            <div class="w-full">
-                                <button
-                                    type="submit"
-                                    :disabled="submitLogin == true"
-                                    class="px-10 py-2 bg-yellow-400 text-blue-900 font-bold"
-                                >
-                                    Submit
-                                </button>
-                            </div>
-                        </div>
+
+                        <button
+                            type="submit"
+                            class="submit-button"
+                            :disabled="isSending"
+                        >
+                            {{ isSending ? "Sending..." : "Send Message" }}
+                        </button>
                     </form>
                 </div>
             </div>
@@ -196,71 +149,302 @@
 </template>
 
 <script>
-require("dotenv").config();
-
 import emailjs from "emailjs-com";
 
-import {
-    required,
-    minLength,
-    maxLength,
-    email,
-    numeric
-} from "vuelidate/lib/validators";
+const emptyForm = () => ({
+    name: "",
+    email: "",
+    phone_number: "",
+    company: "",
+    message: ""
+});
 
 export default {
+    name: "ContactForm",
+
     data() {
         return {
-            name: "",
-            email: "",
-            phone_number: "",
-            company: "",
-            message: "",
-            submitLogin: false,
-            suc_msg: ""
+            form: emptyForm(),
+            isSending: false,
+            successMessage: "",
+            errorMessage: ""
         };
     },
-    validations: {
-        name: {
-            required
-        },
-        email: {
-            required,
-            email
-        },
-        phone_number: {
-            required,
-            numeric,
-            minLength: minLength(10),
-            maxLength: maxLength(10)
-        },
-        message: {
-            required
-        }
-    },
+
     methods: {
-        submitForm: function(e) {
-            this.submitLogin = true;
-            this.$v.$touch();
-            if (!this.$v.$invalid) {
-                emailjs
-                    .sendForm(
-                        "service_1rh1mhb",
-                        "template_vmr8fdq",
-                        e.target,
-                        "user_IUTi4iPGLp7nRi0SOj2Pn"
-                    )
-                    .then(response => {
-                        this.suc_msg = response.text;
-                        this.name = "";
-                        this.email = "";
-                        this.phone_number = "";
-                        this.company = "";
-                        this.message = "";
-                        this.submitLogin = false;
-                    });
+        async submitForm() {
+            if (this.isSending) {
+                return;
+            }
+
+            this.successMessage = "";
+            this.errorMessage = "";
+
+            const requiredFields = [
+                this.form.name,
+                this.form.email,
+                this.form.phone_number,
+                this.form.message
+            ];
+
+            if (requiredFields.some(value => !value.trim())) {
+                this.errorMessage =
+                    "Please complete all required fields.";
+                return;
+            }
+
+            this.isSending = true;
+
+            try {
+                await emailjs.sendForm(
+                    "service_zo9n1ob",
+                    "template_2a960xd",
+                    this.$refs.contactForm,
+                    "XxYs8MFKrYKl8unWc"
+                );
+
+                this.successMessage =
+                    "Thank you! Your enquiry has been submitted successfully.";
+                this.form = emptyForm();
+            } catch (error) {
+                this.errorMessage =
+                    "Your message could not be sent. Please try again, or email us at info@fogroups.com.";
+            } finally {
+                this.isSending = false;
             }
         }
     }
 };
 </script>
+
+<style scoped>
+.fo-contact {
+    --fo-blue: #022c4b;
+    --fo-yellow: #ffcc00;
+    position: relative;
+    padding: 64px 20px;
+    background: #f4f6f8;
+    color: var(--fo-blue);
+}
+
+.contact-container {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.contact-card {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    overflow: hidden;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 12px 36px rgba(2, 44, 75, 0.08);
+}
+
+.contact-details {
+    padding: 48px 36px;
+    background: var(--fo-blue);
+    color: #ffffff;
+}
+
+.section-label {
+    margin: 0 0 14px;
+    color: var(--fo-yellow);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.contact-details h1 {
+    margin: 0 0 18px;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.contact-intro {
+    margin: 0 0 34px;
+    color: #dce6ee;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.contact-item {
+    margin-top: 28px;
+}
+
+.contact-item h2 {
+    margin: 0 0 10px;
+    color: var(--fo-yellow);
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.contact-item p,
+.contact-item a {
+    margin: 0;
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.contact-item a {
+    display: block;
+    width: fit-content;
+    overflow-wrap: anywhere;
+    text-decoration: none;
+}
+
+.contact-item a:hover {
+    color: var(--fo-yellow);
+    text-decoration: underline;
+}
+
+.contact-form-panel {
+    min-width: 0;
+    padding: 48px 36px;
+}
+
+.contact-form-panel h2 {
+    margin: 0 0 10px;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.form-intro {
+    margin: 0 0 26px;
+    color: #586b7b;
+    font-size: 14px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.form-field {
+    min-width: 0;
+    margin-bottom: 22px;
+}
+
+.form-field label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.form-field input,
+.form-field textarea {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 1px solid #cbd5df;
+    border-radius: 6px;
+    background: #ffffff;
+    color: var(--fo-blue);
+    font: inherit;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.form-field textarea {
+    min-height: 160px;
+    resize: vertical;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+    border-color: var(--fo-blue);
+    outline: 2px solid var(--fo-yellow);
+    outline-offset: 2px;
+}
+
+.submit-button {
+    min-height: 48px;
+    padding: 13px 28px;
+    border: none;
+    border-radius: 6px;
+    background: var(--fo-yellow);
+    color: var(--fo-blue);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background: #edbd00;
+}
+
+.submit-button:disabled {
+    opacity: 0.65;
+    cursor: wait;
+}
+
+.submit-button:focus-visible,
+.contact-item a:focus-visible {
+    outline: 3px solid var(--fo-yellow);
+    outline-offset: 4px;
+}
+
+.form-notice {
+    margin-bottom: 22px;
+    padding: 14px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.notice-success {
+    background: #e7f5ec;
+    color: #176536;
+}
+
+.notice-error {
+    background: #fff0f0;
+    color: #9c2525;
+}
+
+@media (max-width: 900px) {
+    .contact-card {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-details,
+    .contact-form-panel {
+        padding: 36px 28px;
+    }
+}
+
+@media (max-width: 540px) {
+    .fo-contact {
+        padding: 44px 16px;
+    }
+
+    .contact-details,
+    .contact-form-panel {
+        padding: 30px 22px;
+    }
+
+    .contact-details h1 {
+        font-size: 28px;
+    }
+
+    .contact-form-panel h2 {
+        font-size: 25px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .submit-button {
+        width: 100%;
+    }
+}
+</style>

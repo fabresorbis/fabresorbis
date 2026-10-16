@@ -1,20 +1,17 @@
 <template>
-    <div class="products_services">
+    <div class="about-page">
         <NavigationMenu />
-        <SmallBanner>
+
+        <section class="about-banner" aria-label="About FO Groups">
             <img
-                src="../assets/images/fabresorbis.png"
-                class="w-full"
-                style="max-width:300px;"
-                alt=""
+                src="../assets/images/about-cover.png"
+                alt="Fabres Orbis office branding"
+                class="about-banner-image"
+                width="1739"
+                height="1172"
             />
-            <h1
-                class="pt-8 text-3xl md:text-3xl lg:text-5xl font-bold leading-tight my-auto"
-            >
-                FO Groups <br />
-                The Living Future
-            </h1>
-        </SmallBanner>
+        </section>
+
         <AboutCompany />
         <OurAim />
         <AboutFabres />
@@ -26,7 +23,6 @@
 
 <script>
 import NavigationMenu from "../components/NavigationMenu";
-import SmallBanner from "../components/SmallBanner";
 import AboutCompany from "../components/AboutCompany";
 import OurAim from "../components/OurAim";
 import AboutFabres from "../components/AboutFabres";
@@ -35,22 +31,44 @@ import Footer from "../components/Footer";
 
 export default {
     name: "About",
+
     components: {
         NavigationMenu,
-        SmallBanner,
         AboutCompany,
         OurAim,
         AboutFabres,
         Inspiration,
         Footer
     },
+
     metaInfo: {
         title: "About Us",
-        titleTemplate: "%s - Fabres Orbis",
+        titleTemplate: "%s - FO Groups",
         htmlAttrs: {
-            lang: "en",
-            amp: true
+            lang: "en"
         }
     }
 };
 </script>
+
+<style scoped>
+.about-page {
+    width: 100%;
+}
+
+.about-banner {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #022c4b;
+}
+
+.about-banner-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+</style>

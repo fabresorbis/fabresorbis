@@ -18,8 +18,9 @@
                         </div>
                         <div class="text-lg font-light leading-snug">
                             <p>Fabres Orbis Pvt. Ltd</p>
-                            <p>8/260, Kuttikattu</p>
-                            <p>Kunnonni, Kottayam - 686 582</p>
+                            <p>3rd Floor, J.C.Chambers</p>
+                            <p>NO 60/44, Panampilly Nagar</p>
+                            <p>Kochi, Keralam - 682036</p>
                         </div>
                     </div>
                     <div class="flex flex-row mb-12">
@@ -27,7 +28,7 @@
                             <i class="bx bx-phone text-2xl"></i>
                         </div>
                         <div class="text-lg font-light leading-snug">
-                            <p>+91 751 086 4201</p>
+                            <p>+91 7012575518, 9074294969</p>
                         </div>
                     </div>
                     <div class="flex flex-row">
@@ -35,7 +36,7 @@
                             <i class="bx bx-mail-send text-2xl"></i>
                         </div>
                         <div class="text-lg font-light leading-snug">
-                            <p>info@fogroups.com</p>
+                            <p>info@fogroups.com, fabresorbispvtltd@gmail.com</p>
                         </div>
                     </div>
                 </div>

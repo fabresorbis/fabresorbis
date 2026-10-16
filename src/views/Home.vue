@@ -15,9 +15,11 @@ import HeroBanner from "../components/HeroBanner";
 import Services from "../components/Services";
 import ServiceBanners from "../components/ServiceBanner";
 import Footer from "../components/Footer";
+import createSeo from "../seo";
 
 export default {
-    name: 'Home',
+    name: "Home",
+
     components: {
         NavigationMenu,
         HeroBanner,
@@ -25,13 +27,7 @@ export default {
         ServiceBanners,
         Footer
     },
-    metaInfo: {
-        title: 'Home',
-        titleTemplate: '%s - Fabres Orbis',
-        htmlAttrs: {
-            lang: 'en',
-            amp: true
-        }
-    }
-}
+
+    metaInfo: createSeo("home")
+};
 </script>

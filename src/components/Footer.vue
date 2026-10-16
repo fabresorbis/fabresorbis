@@ -52,7 +52,7 @@
                     </a>
                     <a
                         class="text-lg font-bold text-blue-900 no-underline"
-                        href="https://www.instagram.com/fo_groups"
+                        href="https://www.instagram.com/fogroups_"
                         target="_blank"
                     >
                         <i class="bx bxl-instagram text-3xl"></i>

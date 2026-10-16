@@ -43,7 +43,10 @@
             </div>
         </section>
 
-        <section class="clients-section" aria-labelledby="clients-title">
+        <section
+            class="clients-section"
+            aria-labelledby="clients-title"
+        >
             <div class="showcase-container">
                 <div class="clients-heading">
                     <span class="section-label">OUR CLIENTS</span>
@@ -63,7 +66,10 @@
                         class="clients-track"
                         :class="{ 'is-paused': clientsPaused }"
                     >
-                        <ul class="clients-group" aria-label="Client names">
+                        <ul
+                            class="clients-group"
+                            aria-label="Client names"
+                        >
                             <li
                                 v-for="client in clients"
                                 :key="client.id"
@@ -79,13 +85,19 @@
                                     @error="handleLogoError(client.id)"
                                 />
 
-                                <strong v-else class="client-name">
+                                <strong
+                                    v-else
+                                    class="client-name"
+                                >
                                     {{ client.name }}
                                 </strong>
                             </li>
                         </ul>
 
-                        <ul class="clients-group" aria-hidden="true">
+                        <ul
+                            class="clients-group"
+                            aria-hidden="true"
+                        >
                             <li
                                 v-for="client in clients"
                                 :key="'copy-' + client.id"
@@ -101,7 +113,10 @@
                                     @error="handleLogoError(client.id)"
                                 />
 
-                                <strong v-else class="client-name">
+                                <strong
+                                    v-else
+                                    class="client-name"
+                                >
                                     {{ client.name }}
                                 </strong>
                             </li>
@@ -159,22 +174,31 @@ export default {
 
             clients: [
                 {
-                    id: "lulu",
-                    name: "LuLu Group India",
+                    id: "lulu-mall",
+                    name: "LuLu Mall",
                     logo:
-                        "https://upload.wikimedia.org/wikipedia/commons/f/f8/LuluLogo.jpg",
+                        "https://www.bengaluru.lulumall.in/wp-content/uploads/2023/07/LULU-LOGO.png",
+                    failed: false
+                },
+                {
+                    id: "lulu-hypermarket",
+                    name: "LuLu Hypermarket",
+                    logo:
+                        "https://www.luluretail.com/media/f5fihxjf/lulu-hypermarket.jpg?width=600&height=300",
                     failed: false
                 },
                 {
                     id: "trine",
                     name: "Trine Holdings",
-                    logo: "",
+                    logo:
+                        "https://www.trineholdings.com/img/logo-ft.svg",
                     failed: false
                 },
                 {
                     id: "salkara",
                     name: "Salkara by Paragon",
-                    logo: "",
+                    logo:
+                        "https://www.salkara.com/wp-content/themes/salkara/images/og-image.jpg",
                     failed: false
                 },
                 {
@@ -191,9 +215,10 @@ export default {
                     failed: false
                 },
                 {
-                    id: "desi",
-                    name: "Desi Dumblings",
-                    logo: "",
+                    id: "dessi-dumplings",
+                    name: "Dessi Dumplings",
+                    logo:
+                        "https://play-lh.googleusercontent.com/mcRcq2tfF81PTl7TiqJfCDi-FKg2BWc2j1UNjD4o8gBSChTRBToCFXCVNbyQU-b4cBZHMPkv1jNhsKI6eZh_=w600-h300-pc0xffffff-pd",
                     failed: false
                 },
                 {
@@ -205,7 +230,8 @@ export default {
                 {
                     id: "auto-spa",
                     name: "Auto Spa",
-                    logo: "",
+                    logo:
+                        "https://theautospa.co.in/wp-content/uploads/2026/03/cropped-autospa-icon.jpeg",
                     failed: false
                 },
                 {

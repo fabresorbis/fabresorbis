@@ -125,11 +125,13 @@ export default {
 
 <style scoped>
 .fo-navigation {
-    --navigation-blue: #17324d;
+    --navigation-blue: #022c4b;
+    --brand-yellow: #ffcc00;
     position: relative;
     z-index: 2000;
     width: 100%;
     background: var(--navigation-blue);
+    color: #ffffff;
     overflow: visible;
 }
 
@@ -147,10 +149,10 @@ export default {
     box-sizing: border-box;
 }
 
-/* The circle extends 52px below the navigation bar. */
+/* A 150px circle extending 62px below the bar. */
 .brand-link {
     position: absolute;
-    top: -10px;
+    top: 0;
     left: 28px;
     z-index: 2;
     display: flex;
@@ -158,7 +160,7 @@ export default {
     justify-content: center;
     width: 150px;
     height: 150px;
-    padding: 14px;
+    padding: 0;
     box-sizing: border-box;
     border: none;
     border-radius: 50%;
@@ -168,14 +170,15 @@ export default {
     overflow: hidden;
 }
 
+/* The uploaded image is already circular. */
 .navigation-logo {
     display: block;
-    width: 122px;
-    height: 100px;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
     background: transparent;
     border: none;
-    border-radius: 0;
+    border-radius: 50%;
     box-shadow: none;
 }
 
@@ -206,7 +209,7 @@ export default {
 
 .navigation-link:hover,
 .navigation-link.router-link-exact-active {
-    background: #f6c900;
+    background: var(--brand-yellow);
     color: var(--navigation-blue);
 }
 
@@ -214,7 +217,7 @@ export default {
 .navigation-link:focus-visible,
 .mobile-toggle:focus-visible,
 .mobile-link:focus-visible {
-    outline: 3px solid #f6c900;
+    outline: 3px solid var(--brand-yellow);
     outline-offset: 4px;
 }
 
@@ -254,12 +257,7 @@ export default {
         left: 20px;
         width: 112px;
         height: 112px;
-        padding: 10px;
-    }
-
-    .navigation-logo {
-        width: 92px;
-        height: 76px;
+        padding: 0;
     }
 
     .desktop-links {
@@ -300,7 +298,7 @@ export default {
 
     .mobile-link:hover,
     .mobile-link.router-link-exact-active {
-        background: #f6c900;
+        background: var(--brand-yellow);
         color: var(--navigation-blue);
     }
 }

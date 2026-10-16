@@ -14,8 +14,8 @@
                         <h2>Visit us</h2>
                         <p>
                             Fabres Orbis Private Limited<br />
-                            3rd Floor, J.C. Chambers<br />
-                            No. 60/44, Panampilly Nagar<br />
+                            No. 60/44, 3rd Floor<br />
+                            J.C. Chambers, Panampilly Nagar<br />
                             Kochi, Kerala – 682036
                         </p>
                     </div>

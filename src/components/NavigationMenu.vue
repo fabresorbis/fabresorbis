@@ -1,174 +1,281 @@
 <template>
-    <nav
-        class="relative top-0 px-0 py-3 bg-blue-900 box-border h-16 leading-6 font-normal text-base"
-    >
-        <div
-            class="flex px-4 md:px-8 max-w-screen-xl w-full m-auto justify-between box-border"
-        >
-            <ul
-                class="p-0 m-0 list-none justify-start justify-self-start flex-none flex"
+    <nav class="fo-navigation" aria-label="Main navigation">
+        <div class="navigation-container">
+            <router-link
+                to="/"
+                class="brand-link"
+                aria-label="FO Groups home"
+                @click.native="closeMenu"
             >
-                <li class="">
-                    <a href="/">
-                        <img class="" :src="logo" alt="" />
-                    </a>
-                </li>
-            </ul>
-            <ul
-                class="flex text-white justify-end m-0 p-0 list-none leading-6 flex-none self-center"
-            >
-                <li
-                    v-for="(link, index) in nav_links"
-                    :key="index"
-                    class="pr-4 py-1 mb-0 hidden md:block desktop"
-                >
+                <img
+                    :src="logo"
+                    alt="FO GROUPS"
+                    class="navigation-logo"
+                />
+            </router-link>
+
+            <ul class="desktop-links">
+                <li v-for="link in nav_links" :key="link.path">
                     <router-link
                         :to="link.path"
-                        class="px-3 pb-1 pt-1 m-0 rounded-full font-bold hover:bg-yellow-400 hover:text-yellow-800"
+                        class="navigation-link"
+                        exact
                     >
                         {{ link.menu }}
                     </router-link>
                 </li>
-                <li class="pr-1 mb-0 block md:hidden text-white cursor-pointer">
-                    <a
-                        @click="isOpenMobileMenu = !isOpenMobileMenu"
-                        :class="
-                            isOpenMobileMenu ? 'text-gray-900' : 'text-gray-500'
-                        "
-                        class="px-1 py-1 text-xl"
-                    >
-                        <i class="bx bx-menu text-4xl text-white"></i>
-                    </a>
-                </li>
             </ul>
+
+            <button
+                type="button"
+                class="mobile-toggle"
+                :aria-expanded="isOpenMobileMenu ? 'true' : 'false'"
+                aria-controls="fo-mobile-menu"
+                :aria-label="isOpenMobileMenu ? 'Close menu' : 'Open menu'"
+                @click="isOpenMobileMenu = !isOpenMobileMenu"
+                @keydown.esc="closeMenu"
+            >
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    aria-hidden="true"
+                    focusable="false"
+                >
+                    <path
+                        v-if="isOpenMobileMenu"
+                        d="M6 6L18 18M6 18L18 6"
+                    />
+                    <path
+                        v-else
+                        d="M4 6H20M4 12H20M4 18H20"
+                    />
+                </svg>
+            </button>
         </div>
+
         <div
             v-if="isOpenMobileMenu"
-            class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden zindex-1999 cursor-pointer"
+            id="fo-mobile-menu"
+            class="mobile-menu"
+            @keydown.esc="closeMenu"
         >
-            <div class="rounded-lg shadow-lg">
-                <div
-                    class="rounded-lg shadow-xs bg-white divide-y-2 divide-gray-50"
-                >
-                    <div class="pt-5 pb-6 px-5 space-y-6">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <img
-                                    :src="logo_dark"
-                                    alt=""
-                                    class="h-11 w-auto"
-                                />
-                            </div>
-                            <div class="-mr-2">
-                                <button
-                                    @click="
-                                        isOpenMobileMenu = !isOpenMobileMenu
-                                    "
-                                    type="button"
-                                    class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
-                                >
-                                    <svg
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                        class="h-6 w-6"
-                                    >
-                                        <path
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            stroke-width="2"
-                                            d="M6 18L18 6M6 6l12 12"
-                                        ></path>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        <div>
-                            <nav class="grid row-gap-8">
-                                <router-link
-                                    v-for="(link, index) in nav_links"
-                                    :key="index"
-                                    class="-m-3 p-3 flex items-center space-x-3 rounded-md hover:bg-gray-50 transition ease-in-out duration-150"
-                                    :to="link.path"
-                                >
-                                    <div
-                                        class="text-base leading-6 font-medium text-gray-900"
-                                    >
-                                        {{ link.menu }}
-                                    </div>
-                                </router-link>
-                            </nav>
-                        </div>
-                    </div>
-                    <div class="py-6 px-5 space-y-6">
-                        <div class="grid grid-cols-2 row-gap-4 col-gap-8">
-                            <a
-                                href="blogs"
-                                class="text-base leading-6 font-medium text-gray-900 hover:text-gray-700 transition ease-in-out duration-150"
-                                >Blogs</a
-                            >
-                            <a
-                                href="contact-us"
-                                class="text-base leading-6 font-medium text-gray-900 hover:text-gray-700 transition ease-in-out duration-150"
-                                >Contact Us</a
-                            >
-                            <a
-                                href="about-us"
-                                class="text-base leading-6 font-medium text-gray-900 hover:text-gray-700 transition ease-in-out duration-150"
-                                >About Us</a
-                            >
-                            <a
-                                href="our-services"
-                                class="text-base leading-6 font-medium text-gray-900 hover:text-gray-700 transition ease-in-out duration-150"
-                                >Privacy Policy</a
-                            >
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <ul>
+                <li v-for="link in nav_links" :key="link.path">
+                    <router-link
+                        :to="link.path"
+                        class="mobile-link"
+                        exact
+                        @click.native="closeMenu"
+                    >
+                        {{ link.menu }}
+                    </router-link>
+                </li>
+            </ul>
         </div>
     </nav>
 </template>
 
 <script>
-import logo from "../assets/images/fabres-orbis-logo.png";
-import logo_dark from "../assets/images/fabres-orbis-logo-dark.png";
+import logo from "../assets/images/fo-groups-logo.png";
 
 export default {
-    data: function() {
+    name: "NavigationMenu",
+
+    data() {
         return {
-            logo: logo,
-            logo_dark: logo_dark,
+            logo,
             isOpenMobileMenu: false,
             nav_links: [
                 {
-                    title: "Home - Fabres Orbis",
                     menu: "Home",
                     path: "/"
                 },
                 {
-                    title: "About Us - Fabres Orbis",
                     menu: "About Us",
                     path: "/about-us"
                 },
                 {
-                    title: "Products & Services - Fabres Orbis",
                     menu: "Products & Services",
                     path: "/products-services"
                 },
                 {
-                    title: "Contact Us - Fabres Orbis",
                     menu: "Contact Us",
                     path: "/contact-us"
                 }
             ]
         };
+    },
+
+    watch: {
+        $route() {
+            this.closeMenu();
+        }
+    },
+
+    methods: {
+        closeMenu() {
+            this.isOpenMobileMenu = false;
+        }
     }
 };
 </script>
+
 <style scoped>
-.desktop .router-link-exact-active {
-    background-color: #ffce00;
-    color: #975a16;
+.fo-navigation {
+    position: relative;
+    z-index: 2000;
+    width: 100%;
+    background: #17324d;
+}
+
+.navigation-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    max-width: 1280px;
+    min-height: 88px;
+    margin: 0 auto;
+    padding: 10px 28px;
+    box-sizing: border-box;
+}
+
+.brand-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 6px 12px;
+    border-radius: 5px;
+    background: #ffffff;
+    text-decoration: none;
+}
+
+.navigation-logo {
+    display: block;
+    width: 112px;
+    height: 56px;
+    object-fit: contain;
+}
+
+.desktop-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navigation-link {
+    display: block;
+    padding: 10px 15px;
+    border-radius: 24px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.navigation-link:hover,
+.navigation-link.router-link-exact-active {
+    background: #f6c900;
+    color: #17324d;
+}
+
+.brand-link:focus-visible,
+.navigation-link:focus-visible,
+.mobile-toggle:focus-visible,
+.mobile-link:focus-visible {
+    outline: 3px solid #f6c900;
+    outline-offset: 4px;
+}
+
+.mobile-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 8px;
+    border: 1px solid #6b8093;
+    border-radius: 6px;
+    background: transparent;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.mobile-toggle svg {
+    width: 26px;
+    height: 26px;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .navigation-container {
+        min-height: 78px;
+        padding: 9px 20px;
+    }
+
+    .navigation-logo {
+        width: 98px;
+        height: 48px;
+    }
+
+    .desktop-links {
+        display: none;
+    }
+
+    .mobile-toggle {
+        display: inline-flex;
+    }
+
+    .mobile-menu {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 12px 20px 20px;
+        background: #17324d;
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .mobile-menu ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .mobile-link {
+        display: block;
+        margin-top: 6px;
+        padding: 13px 16px;
+        border-radius: 6px;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .mobile-link:hover,
+    .mobile-link.router-link-exact-active {
+        background: #f6c900;
+        color: #17324d;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .navigation-link {
+        transition: none;
+    }
 }
 </style>

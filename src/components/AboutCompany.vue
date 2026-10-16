@@ -11,7 +11,7 @@
                         Fabres Orbis Private Limited (FO GROUPS)
                     </strong>
                     is a multidisciplinary engineering and project solutions
-                    company based in Kerala, with over 30+ years of combined experience
+                    company based in Kerala, with over 30 years of combined experience
                     in residential and commercial projects.
                 </p>
 

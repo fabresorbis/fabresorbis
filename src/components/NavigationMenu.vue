@@ -148,9 +148,11 @@ export default {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    padding: 6px 12px;
-    border-radius: 5px;
-    background: #ffffff;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
     text-decoration: none;
 }
 
@@ -159,6 +161,10 @@ export default {
     width: 112px;
     height: 56px;
     object-fit: contain;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
 }
 
 .desktop-links {

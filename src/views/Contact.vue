@@ -5,7 +5,9 @@
         <section class="contact-hero" aria-labelledby="contact-hero-title">
             <div class="hero-container">
                 <div class="hero-content">
-                    <p class="hero-label">LET’S BUILD SOMETHING TOGETHER</p>
+                    <p class="hero-label">
+                        LET’S BUILD SOMETHING TOGETHER
+                    </p>
 
                     <h1 id="contact-hero-title">
                         Every great project starts with
@@ -30,7 +32,6 @@
                         xmlns="http://www.w3.org/2000/svg"
                         focusable="false"
                     >
-                        <!-- Connection paths -->
                         <g
                             stroke="#5c829e"
                             stroke-width="2"
@@ -42,7 +43,6 @@
                             <path d="M85 230H130V195" />
                         </g>
 
-                        <!-- Ground and blueprint outlines -->
                         <path
                             d="M55 248H385"
                             stroke="#ffcc00"
@@ -56,7 +56,6 @@
                             stroke-linecap="round"
                         />
 
-                        <!-- Main building -->
                         <path
                             d="M160 246V78L258 52V246"
                             fill="#0b3a5b"
@@ -78,7 +77,6 @@
                             stroke-linejoin="round"
                         />
 
-                        <!-- Building windows -->
                         <g
                             stroke="#ffcc00"
                             stroke-width="5"
@@ -93,14 +91,12 @@
                             <path d="M130 199H140" />
                         </g>
 
-                        <!-- Entrance -->
                         <path
                             d="M198 246V218H226V246"
                             stroke="#ffffff"
                             stroke-width="3"
                         />
 
-                        <!-- Engineering gear -->
                         <g transform="translate(340 66)">
                             <circle
                                 r="28"
@@ -127,7 +123,6 @@
                             </g>
                         </g>
 
-                        <!-- Conversation bubble -->
                         <path
                             d="M39 58H101V99H72L55 113V99H39Z"
                             fill="#ffcc00"
@@ -141,7 +136,6 @@
                             <circle cx="85" cy="79" r="3" />
                         </g>
 
-                        <!-- Connected system node -->
                         <circle
                             cx="360"
                             cy="205"
@@ -177,6 +171,7 @@ import NavigationMenu from "../components/NavigationMenu";
 import ContactForm from "../components/ContactForm";
 import Location from "../components/Location";
 import Footer from "../components/Footer";
+import createSeo from "../seo";
 
 export default {
     name: "Contact",
@@ -188,13 +183,7 @@ export default {
         Footer
     },
 
-    metaInfo: {
-        title: "Contact Us",
-        titleTemplate: "%s - FO Groups",
-        htmlAttrs: {
-            lang: "en"
-        }
-    }
+    metaInfo: createSeo("contact")
 };
 </script>
 

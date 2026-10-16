@@ -28,6 +28,7 @@ import OurAim from "../components/OurAim";
 import AboutFabres from "../components/AboutFabres";
 import Inspiration from "../components/Inspiration";
 import Footer from "../components/Footer";
+import createSeo from "../seo";
 
 export default {
     name: "About",
@@ -41,13 +42,7 @@ export default {
         Footer
     },
 
-    metaInfo: {
-        title: "About Us",
-        titleTemplate: "%s - FO Groups",
-        htmlAttrs: {
-            lang: "en"
-        }
-    }
+    metaInfo: createSeo("about")
 };
 </script>
 

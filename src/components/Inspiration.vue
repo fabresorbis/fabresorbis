@@ -22,7 +22,7 @@
                         <p class="md:text-right leading-none text-lg font-bold">
                             Dr. A.P.J. Abdul Kalam <br /><span
                                 class="text-sm font-normal"
-                                >Fromer Prsident of India</span
+                                >Fromer President of India</span
                             >
                         </p>
                     </div>
